@@ -1,0 +1,57 @@
+#content{
+	padding-top: 54px;
+}
+.contact .img{
+		width: 258px;
+		height: 217px;
+		border: 1px solid #B8B7B7;
+}
+ .contact .address{
+ 	padding-left: 27px;
+ }
+ .contact .address p{
+ 	font-size: 12px;
+ 	color: #595757;
+ 	line-height: 14px;
+ 	padding-bottom: 20px;
+ }
+ .Contact_Us{
+ 	margin-left: 80px;
+ }
+ .Contact_Us h5{
+ 	font-size: 14px;
+ 	color: #221814;
+ 	line-height: 21px;
+ 	padding-bottom: 10px;
+ }
+ .Contact_Us div{
+ 	width: 265px;
+ 	height: 24px;
+ 	background: #E4E4E5;
+ 	font-size: 12px;
+ 	line-height: 24px;
+ 	margin-bottom: 8px;
+ 	padding-left: 10px;
+ }
+ .Contact_Us div input{
+ 	width: 236px;
+ 	border: none;
+   background-color: transparent;
+   outline: none;
+ }
+.Contact_Us  .ly{
+	width: 275px;
+	height: 97px;
+    border: none;
+    outline: none;
+    background: #E4E4E5;
+}
+.Contact_Us  input.button{
+	margin-top: 5px;
+	width: 72px;
+	height: 15px;
+	background: #585656;
+	border: #ABAAAA;
+	color: #fff;
+	outline: none;
+}
