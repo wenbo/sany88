@@ -53,4 +53,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  namespace :admin do
+    root :to =>'sessions#index'
+    get  'login'            =>'sessions#new',      :as  =>:login
+    post '/sessions/create' =>'sessions#create',   :as =>:logined
+    get 'logout'           =>'sessions#destroy',  :as =>:logout
+  end #namespace /admin
+
 end

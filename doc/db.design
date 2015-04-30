@@ -1,0 +1,1 @@
+rails g model admin     name:string  encrypt_pwd:string  salt:string
