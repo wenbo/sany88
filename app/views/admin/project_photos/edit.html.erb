@@ -24,7 +24,7 @@
           <div class="control-group" style="margin-bottom:50px">
             <label class="control-label" for="cproject_name">上传大图图片</label>
             <div class="controls">
-							<%= f.file_field :image %>最佳宽为700,最佳高为375
+							<%= f.file_field :image %>最佳宽为700,最佳高为375, 后台会同时自动生成100x50 的小图
             </div>
 						<div>
 							图片预览:
@@ -32,7 +32,7 @@
 						</div>
           </div>
 					
-
+					<% if false %>
           <div class="control-group" style="margin-bottom:50px">
             <label class="control-label" for="cproject_name">上传小图图片</label>
             <div class="controls">
@@ -43,6 +43,7 @@
 							<%= image_tag @project_photo.small_image.url(:thumb), :alt => "" %>
 						</div>
           </div>
+					<% end %>
 
           <div class="form-actions">
             <button type="submit" class="btn btn-primary" id="project_create_btn">更新</button>

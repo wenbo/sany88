@@ -4,7 +4,7 @@ class ProjectPhoto < ActiveRecord::Base
   has_attached_file :image,
   :url => '/system/project/:id/:style.:extension',
   :path => ':rails_root/public/system/project/:id/:style.:extension',
-  :styles => {:thumb => "100x100", :show => "700x375>"}
+  :styles => {:thumb => "100x100", :show => "700x375>", :small_image => "100x50"}
 
   has_attached_file :small_image,
   :url => '/system/project_smallimage/:id/:style.:extension',

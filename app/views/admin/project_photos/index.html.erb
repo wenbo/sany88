@@ -26,7 +26,7 @@
                   <td class="center"><span class="badge badge-info"><%= photo.id %></span></td>
                   <td class="center"><%= photo.project.brand_name %></td>
                   <td class="center"><%= image_tag photo.image.url(:thumb) %></td>
-                  <td class="center"><%= image_tag photo.small_image.url(:thumb) %></td>
+                  <td class="center"><%= image_tag photo.image.url(:small_image) %></td>
 
                   <td class="center">
                     <a class="btn btn-info" href="<%= edit_admin_project_photo_path(photo.id) %>"><i class="icon-edit icon-white"></i>编辑</a>
