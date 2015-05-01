@@ -1,1 +1,3 @@
 rails g model admin     name:string  encrypt_pwd:string  salt:string
+
+rails g controller home index contact cooperate design_concept partner team

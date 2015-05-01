@@ -1,9 +1,24 @@
 Rails.application.routes.draw do
+  get 'contact' => 'home#contact'
+
+  get 'cooperate' => 'home#cooperate'
+
+  get 'design_concept' => 'home#design_concept'
+
+  get 'partner' => 'home#partner'
+
+  get 'team' => 'home#team'
+
+  get 'cases' => 'projects#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
+  resources :categories do
+    resources :projects
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -58,6 +73,8 @@ Rails.application.routes.draw do
     get  'login'            =>'sessions#new',      :as  =>:login
     post '/sessions/create' =>'sessions#create',   :as =>:logined
     get 'logout'           =>'sessions#destroy',  :as =>:logout
+    resources :categories
+    resources :projects
   end #namespace /admin
 
 end

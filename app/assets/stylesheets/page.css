@@ -1,0 +1,36 @@
+.content_nav{
+	margin-bottom: 41px;
+}
+.page_inner{
+	padding: 0 117px 0 130px ;
+	background: url(/assets/yt.png)no-repeat top right;
+}
+.page_inner h1{
+   font-size: 24px;
+   color: #221814;
+   line-height: 21px;
+   padding-bottom: 8px;
+}
+.page_inner h3{
+	font-size: 18px;
+	color: #221814;
+	line-height: 21px;
+	padding-bottom: 8px;
+	
+}
+.page_inner h3::before{
+	content: "";
+	display: block;
+	float: left;
+	width: 13px;
+	height:13px;
+	background: #585656;
+	margin-right: 10px;
+}
+.page_inner p{
+	padding: 0 0 10px 28px;
+	font-size: 12px;
+	line-height: 21px;
+	color: #595757;
+	
+}

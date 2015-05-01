@@ -1,0 +1,44 @@
+
+.left_inner{
+	width: 708px;
+	padding-top: 25px;
+}
+.left_inner h3{
+	font-size: 18px;
+	line-height: 22px;
+	color: #595757;
+	padding-bottom: 15px;
+}
+.left_inner p{
+	font-size: 12px;
+	color: #595757;
+	line-height: 21px;
+}
+.right{
+	padding: 10px 0 0 67px;
+}
+.right h3{
+	text-align: left;
+	width: 161px;
+	border-bottom: 1px solid #CECDCD;
+	font-size: 14px;
+	line-height: 22px;
+	color: #787676;
+	padding-bottom: 9px;
+}
+.right span{
+	width: 161px;
+	display: block;
+   font-size: 12px;
+   line-height: 14px;
+   color: #6D6B6B;
+   border-top:1px solid #9B9A9A;
+   margin-bottom: 10px;
+}
+.right  p.dfk{
+	margin-top: 113px;
+	width: 80px;
+	height: 80px;
+	background: url(../images/dfk.png)no-repeat;
+
+}
