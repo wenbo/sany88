@@ -1,3 +1,22 @@
 rails g model admin     name:string  encrypt_pwd:string  salt:string
 
 rails g controller home index contact cooperate design_concept partner team
+
+rails g model project brand_name:string company_name:string service_content:string desc:text project_category:references is_public:boolean
+
+rails g model project_category name:string position:string
+
+rails g model project_photo project:references
+
+rails g model project_thumbnail project:references
+
+rails g paperclip project_photo image small_image
+rails g paperclip project_thumbnail image
+
+rails g controller projects index
+
+RAILS_ENV=production rake db:create
+rake secret RAILS_ENV=production
+3abdb8a0d407e1beacf35a04ca25005fc76f9a2fae3db29978e4bace831aafb91aedf66b691c49e66f8e0c63d5e2db7fd9253f8ae7730c7e42903073de662686
+
+RAILS_ENV=production rake assets:precompile
