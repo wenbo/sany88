@@ -1,3 +1,5 @@
+http://localhost:3000/admin/login  guest guest2008
+
 rails g model admin     name:string  encrypt_pwd:string  salt:string
 
 rails g controller home index contact cooperate design_concept partner team

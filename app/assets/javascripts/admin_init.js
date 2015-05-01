@@ -3,3 +3,4 @@
 //= require libs/jquery-ui-1.10.1.custom.min
 //= require bootstrap/bootstrap-tooltip
 //= require bootstrap/bootstrap-dropdown
+//= require admin

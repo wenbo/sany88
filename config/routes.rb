@@ -73,8 +73,9 @@ Rails.application.routes.draw do
     get  'login'            =>'sessions#new',      :as  =>:login
     post '/sessions/create' =>'sessions#create',   :as =>:logined
     get 'logout'           =>'sessions#destroy',  :as =>:logout
-    resources :categories
+    resources :project_categories
     resources :projects
+    resources :project_photos
   end #namespace /admin
 
 end
