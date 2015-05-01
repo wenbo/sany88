@@ -1,0 +1,71 @@
+<div id="content" class="span10">
+  <div class="row-fluid sortable ui-sortable">
+    <div class="box span12">
+      <div class="box-header well" data-original-title="">
+        <h2><i class="icon-edit"></i>编辑案例图片</h2>
+        <div class="box-icon">
+          <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+        </div>
+      </div>
+      <div class="box-content" style="margin-left:50px">
+				<%= form_for @project_photo, url: admin_project_photo_path(@project_photo), method: :post, multipart: true, class: 'form-horizontal' do |f| %>
+        <input name="_method" type="hidden" value="put" />
+        <fieldset>
+          <legend></legend>
+
+
+          <div class="control-group">
+            <label class="control-label" for="cproject_name">所属案例名称</label>
+            <div class="controls">
+							<%= f.select :project_id, [["请选择",""]]+Project.all.collect{|n| [n.brand_name, n.id]}, :size =>20 %>
+            </div>
+          </div>
+
+          <div class="control-group" style="margin-bottom:50px">
+            <label class="control-label" for="cproject_name">上传大图图片</label>
+            <div class="controls">
+							<%= f.file_field :image %>最佳宽为700,最佳高为375
+            </div>
+						<div>
+							图片预览:
+							<%= image_tag @project_photo.image.url(:thumb), :alt => "" %>
+						</div>
+          </div>
+					
+
+          <div class="control-group" style="margin-bottom:50px">
+            <label class="control-label" for="cproject_name">上传小图图片</label>
+            <div class="controls">
+							<%= f.file_field :small_image %>最佳宽为127,最佳高为125
+            </div>
+						<div>
+							图片预览:
+							<%= image_tag @project_photo.small_image.url(:thumb), :alt => "" %>
+						</div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="project_create_btn">更新</button>
+          </div>
+        </fieldset>
+        <% end %>
+
+      </div>
+    </div><!--/span-->
+
+  </div>
+</div>
+<script type="text/javascript" src="/js/my97DatePicker/WdatePicker.js"></script>
+<!--<script type="text/javascript" src="/js/parsley/i18n/messages.zh-cn.js"></script>-->
+<script type="text/javascript" src="/js/parsley/parsley.min.js"></script>
+<script type="text/javascript" src="/js/parsley/parsley.extend.js"></script>
+
+
+<script type="text/javascript">
+  $(function (){
+  $('#project_create_btn').click(function (){
+  $('form').parsley('validate');
+  });
+
+  });
+</script>

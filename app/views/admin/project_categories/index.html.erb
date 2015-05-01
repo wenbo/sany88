@@ -25,7 +25,7 @@
                   <td class="center"><%= cat.name %></td>
                   <td class="center">
                     <a class="btn btn-info" href="<%= edit_admin_project_category_path(cat.id) %>"><i class="icon-edit icon-white"></i>编辑</a>
-                    <a class="btn btn-danger" href="javascript: delete_resource('project_categories, <%= cat.id %>)"><i class="icon-trash icon-white"></i>删除</a>
+                    <a class="btn btn-danger" href="javascript: delete_resource('project_categories', <%= cat.id %>)"><i class="icon-trash icon-white"></i>删除</a>
                   </td>
                 </tr>
             <% end %>
