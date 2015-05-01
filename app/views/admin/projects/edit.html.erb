@@ -12,6 +12,14 @@
         <input name="_method" type="hidden" value="put" />
         <fieldset>
           <legend></legend>
+
+          <div class="control-group">
+            <label class="control-label" for="cname">案例名称</label>
+            <div class="controls">
+              <input type="text" class="span6 typeahead" id="cname" name="project[name]" value="<%= @project.name %>" data-required="true" data-error-message="案例名称不能为空!" />
+            </div>
+          </div>
+
           <div class="control-group">
             <label class="control-label" for="ctitle">客户品牌名称</label>
             <div class="controls">
@@ -22,14 +30,27 @@
           <div class="control-group">
             <label class="control-label" for="ccompany_name">客户公司名称</label>
             <div class="controls">
-              <textarea name="project[company_name]" id="ccompany_name" cols="30" rows="10" style="margin: 0; width: 401px; height: 182px;" data-required="true" data-error-message="内容不能为空!"><%= @project.company_name %></textarea>
+              <input name="project[company_name]" id="ccompany_name" data-required="true" data-error-message="内容不能为空!" value="<%= @project.company_name %>" />
             </div>
           </div>
 
           <div class="control-group">
-            <label class="control-label" for="ccontent">服务内容</label>
+            <label class="control-label" for="cproject_category_id">案例所属分类</label>
             <div class="controls">
-              <textarea name="project[desc]" id="ccontent" cols="30" rows="10" style="margin: 0; width: 401px; height: 182px;" data-required="true" data-error-message="内容不能为空!"><%= @project.company_name %></textarea>
+							<%= select_tag "project[project_category_id]", options_from_collection_for_select(ProjectCategory.all, "id", "name", @project.project_category_id),  prompt: "select category", id: "cproject_category_id"  %>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="cservice_content">服务内容</label>
+            <div class="controls">
+              <input name="project[service_content]" id="cservice_content" data-required="true" data-error-message="内容不能为空!" value="<%= @project.service_content %>" /></div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="cdesc">详细介绍</label>
+            <div class="controls">
+              <textarea name="project[desc]" id="cdesc" cols="30" rows="10" style="margin: 0; width: 401px; height: 182px;" data-required="true" data-error-message="内容不能为空!"><%= @project.desc %></textarea>
             </div>
           </div>
 

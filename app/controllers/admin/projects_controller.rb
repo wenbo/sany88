@@ -45,9 +45,9 @@ class Admin::ProjectsController < Admin::AdminController
 
   private
   def project_params
-    params.require(:project).permit(:brand_name, :company_name, :project_category_id, :desc, :is_public)
+    params.require(:project).permit(:name, :brand_name, :company_name, :project_category_id, :service_content, :desc, :is_public)
   end
-p
+
   def project_thumbnail_params
     params.require(:project_thumbnail).permit(:image)
   end

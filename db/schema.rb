@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150501045241) do
   add_index "project_thumbnails", ["project_id"], name: "index_project_thumbnails_on_project_id", using: :btree
 
   create_table "projects", force: true do |t|
+    t.string   "name"
     t.string   "brand_name"
     t.string   "company_name"
     t.string   "service_content"
