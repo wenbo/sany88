@@ -11,7 +11,7 @@ class Admin::NewsController < Admin::AdminController
   def create
     @news = News.new news_params
     if @news.save
-      redirect_to admin_news_path_index
+      redirect_to admin_news_index_path
     else
       render 'new'
     end
