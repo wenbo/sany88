@@ -1,0 +1,81 @@
+<%= content_for :head do %>
+ <link href="/assets/ui/jquery-ui.css" rel="stylesheet" />
+ <script src="/assets/ui/jquery-ui.js"></script>
+<% end %>
+<div id="content" class="span10">
+	<div class="row-fluid sortable ui-sortable">
+		<div class="box span12">
+			<div class="box-header well" data-original-title="">
+				<h2><i class="icon-edit"></i> 创建新的新闻</h2>
+				<div class="box-icon">
+					<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+				<%= form_tag admin_news_index_path, :method => :post, :multipart =>true, :class =>'form-horizontal' do %>
+        <fieldset>
+          <legend></legend>
+
+          <div class="control-group">
+            <label class="control-label" for="cname">新闻标题</label>
+            <div class="controls">
+              <input type="text" class="span6 typeahead" id="cname" name="news[name]" data-required="true" data-error-message="新闻标题不能为空!" />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="ccontent">详细介绍</label>
+            <div class="controls">
+              <textarea name="news[content]" id="ccontent" cols="30" rows="10" style="margin: 0; width: 401px; height: 182px;" data-required="true" data-error-message="详细介绍不能为空!"></textarea>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="cpublic_time">新闻时间</label>
+            <div class="controls">
+              <input type="text" value=<%= (Date.today + 1).strftime("%Y-%m-%d") %> id="cpublic_time" name="news[public_time]" data-required="true" data-error-message="新闻时间不能为空!" />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="cis_public">是否公开</label>
+            <div class="controls">
+              <input type="checkbox" class="span6 typeahead" id="clink" name="news[is_public]" />
+            </div>
+          </div>
+
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="news_create_btn">更新</button>
+          </div>
+        </fieldset>
+				<% end %>
+
+			</div>
+		</div><!--/span-->
+
+	</div>
+</div>
+<script type="text/javascript" src="/js/my97DatePicker/WdatePicker.js"></script>
+<!--<script type="text/javascript" src="/js/parsley/i18n/messages.zh-cn.js"></script>-->
+<script type="text/javascript" src="/js/parsley/parsley.min.js"></script>
+<script type="text/javascript" src="/js/parsley/parsley.extend.js"></script>
+
+
+<script type="text/javascript">
+  $(function (){
+  $('#news_create_btn').click(function (){
+  $('form').parsley('validate');
+  });
+
+ $("#cpublic_time").datepicker({
+      showOn: "button",
+      dateFormat: "yy-mm-dd",
+			minDate: <%= (Date.today + 1).strftime("%m/%d/%Y") %>,
+      buttonImage: "/assets/calendar.gif",
+      buttonImageOnly: true,
+      buttonText: "Select date"
+      });
+
+  });
+</script>

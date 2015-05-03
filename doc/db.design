@@ -24,3 +24,5 @@ rake secret RAILS_ENV=production
 RAILS_ENV=production rake assets:precompile
 
 rails g controller project_categories index show
+
+rails g model news name:string content:text is_public:boolean public_time:datetime

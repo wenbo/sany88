@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150501045241) do
+ActiveRecord::Schema.define(version: 20150503045223) do
 
   create_table "admins", force: true do |t|
     t.string   "name"
     t.string   "encrypt_pwd"
     t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news", force: true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.boolean  "is_public"
+    t.date     "public_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
   resources :project_categories
   resources :projects
+  resources :news
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -79,6 +80,7 @@ Rails.application.routes.draw do
     resources :project_categories
     resources :projects
     resources :project_photos
+    resources :news
   end #namespace /admin
 
 end
