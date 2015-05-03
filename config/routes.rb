@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'team' => 'home#team'
 
   get 'cases' => 'projects#index'
+  
+  resources :project_categories
+  resources :projects
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

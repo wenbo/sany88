@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/base.css">
 <link rel="stylesheet" type="text/css" href="/assets/global.css">
 <link rel="stylesheet" type="text/css" href="/assets/list.css">
+<link rel="stylesheet" type="text/css" href="/assets/content.css">
 <% end %>
 <div id="content">
   <div class="bx">
@@ -15,24 +16,21 @@
    	 	</ul> 
    	 	<span class="fk fr"></span>
    	</div>
-   	<div class="inner_img">
-   	 	<ul>
-				<% Project.published.in_groups_of(4).each_with_index do |projects, i| %>
-				<% projects.compact.each do |project| %>
-				<% if i == 0 %>
-   	 	 	<li class="npt">
-					<% else %>
-   	 	 	<li>
-					<% end %>
-   	 	 		<div class="img ">
-						<%= link_to (image_tag project.project_thumbnail.image.url, width: '220', height: '149'), project_path(project) %>
-   	 	 		</div>
-   	 	 		<span><%= project.name %></span>
-   	 	 	</li>
-				<% end %>
-				<% end %>
-			</ul>
+   	<div class="left fl">
+			<%= image_tag @project.project_photos.first.image.url(:show), width: '700', height: '375' %>
+   	 	<div class="left_inner">
+   	 		<h3>BRAND INTRODUCTION 品牌介绍</h3>
+   	 		<p><%= @project.desc %></p>
+   	 	</div>
+   	</div>
+   	<div class="right fl">
+   	  <h3>客户品牌名称</h3>
+   	  <span><%= @project.brand_name %></span>
+   	  <h3>客户公司名称</h3>
+   	  <span><%= @project.company_name %></span>
+   	  <h3>服务内容</h3>
+   	  <span><%= @project.service_content %></span>
+   	  <p class="dfk"></p>
    	</div>
   </div>
 </div>
-<div class="cl h42"></div>

@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>上海天地人品牌设计机构</title>
-  <%= csrf_meta_tags %>
-	<%= yield :head %>
-</head>
-<body>
-<%= render :partial => "/shared/header" %>
-<%= yield %>
-<%= render :partial => "/shared/footer" %>
-</body>
+	<head>
+		<% if @title.present? %>
+		<title><%= @title %>  上海天地人品牌设计机构</title>
+		<% else %>
+		<title>上海天地人品牌设计机构</title>
+		<% end %>
+		<%= csrf_meta_tags %>
+		<%= yield :head %>
+	</head>
+	<body>
+		<%= render :partial => "/shared/header" %>
+		<%= yield %>
+		<%= render :partial => "/shared/footer" %>
+	</body>
 </html>

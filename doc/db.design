@@ -22,3 +22,5 @@ rake secret RAILS_ENV=production
 3abdb8a0d407e1beacf35a04ca25005fc76f9a2fae3db29978e4bace831aafb91aedf66b691c49e66f8e0c63d5e2db7fd9253f8ae7730c7e42903073de662686
 
 RAILS_ENV=production rake assets:precompile
+
+rails g controller project_categories index show
