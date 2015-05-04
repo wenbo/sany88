@@ -24,7 +24,7 @@
             <% @project_photos.each do |photo| %>
                 <tr class="<%= cycle('odd', 'even') %>" id="project_photos_<%= photo.id %>">
                   <td class="center"><span class="badge badge-info"><%= photo.id %></span></td>
-                  <td class="center"><%= photo.project.brand_name %></td>
+                  <td class="center"><%= photo.try(:project).try(:brand_name) %></td>
                   <td class="center"><%= image_tag photo.image.url(:thumb) %></td>
                   <td class="center"><%= image_tag photo.image.url(:small_image) %></td>
 
