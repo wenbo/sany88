@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="/assets/global.css">
 <link rel="stylesheet" type="text/css" href="/assets/list.css">
 <link rel="stylesheet" type="text/css" href="/assets/content.css">
+<script type="text/javascript" src="/assets/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/assets/jquery.jcarousel.min.js"></script>
 <% end %>
 <div id="content">
   <div class="bx">
@@ -17,7 +19,7 @@
    	 	<span class="fk fr"></span>
    	</div>
    	<div class="left fl">
-			<%= image_tag @project.project_photos.first.image.url(:show), width: '700', height: '375' %>
+			<%= render :partial => "list" %>
    	 	<div class="left_inner">
    	 		<h3>BRAND INTRODUCTION 品牌介绍</h3>
    	 		<p><%= @project.desc %></p>

@@ -1,0 +1,47 @@
+<%= image_tag @project.project_photos.first.image.url(:show), width: '700', height: '375', id: "image" %>
+<div class="list">
+	<style>
+		.img_opacity{
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+		}
+		<!-- .img_opacity_2{ -->
+    <!-- background-image: url("/images/96X96_black.jpg"); -->
+		<!-- } -->
+	</style>
+	<script type="text/javascript">
+		function create_opacity(id){
+    $('#span'+id).css('position','absolute');
+    $('#blank').remove();
+    $('#wblank').remove();
+    $("#img"+id).after("<span   style='display:block;position: position:;display: block; height: 96px; opacity: 0.5;filter:alpha(opacity=50);-moz-opacity:0.5; width: 96px;' id='blank' ><img  width='100px' height='50px' src='/assets/96X96_black.jpg'></span>");
+		}
+		function create_w_opacity(id){
+    $('#span'+id).css('position','absolute');
+    $('#wblank').remove();
+    $("#img"+id).after("<span onmouseout=\"  $('#wblank').remove();\"  onclick = \"document.getElementById('image').src='/system/project/"+id+"/show.gif'\" style='display:block;position: absolute;display: block; height: 100px; opacity: 0.5;filter:alpha(opacity=50);-moz-opacity:0.5;  width: 50px;z-index:1000000' id='wblank' ><img width='100px' height='50px' src='/assets/96X96_white.jpg'></span>");
+		}
+	</script>
+	<ul id="mycarousel" class="jcarousel-skin-tango" >
+		<%  @project.project_photos.each_with_index do |photo,i| %>
+    <li  id="div<%= photo.id %>"
+         onmouseout=" "
+         onclick="create_opacity('<%= photo.id %>')"
+         style="width: 113px; height:113px;display:block;cursor:hand;cursor: pointer;  padding-left: 0px;  padding-right: 2px;">
+      <span  id="span<%= photo.id %>"      >
+        <%= image_tag photo.image.url(:small_image) ,:onclick => "document.getElementById('image').src='/system/project/#{photo.id}/small_image.jpg'" ,
+        :id => "img#{photo.id}",
+        :style => "position:absolute" ,
+        :onmouseover => "create_w_opacity(#{photo.id})"
+				%>
+      </span>
+    </li>
+		<% end %>
+	</ul>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel();
+		});
+	</script>
+</div>
