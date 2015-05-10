@@ -28,7 +28,7 @@
     <li  id="div<%= photo.id %>"
          onmouseout=" "
          onclick="create_opacity('<%= photo.id %>')"
-         style="width: 113px; height:113px;display:block;cursor:hand;cursor: pointer;  padding-left: 0px;  padding-right: 2px;">
+         style="width: 100px; height:50px;display:block;cursor: pointer;  padding-left: 0px;  padding-right: 2px;">
       <span  id="span<%= photo.id %>"      >
         <%= image_tag photo.image.url(:small_image) ,:onclick => "document.getElementById('image').src='/system/project/#{photo.id}/small_image.jpg'" ,
         :id => "img#{photo.id}",
