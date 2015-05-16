@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   get 'cooperate' => 'home#cooperate'
 
-  get 'design_concept' => 'home#design_concept'
+  get 'service_mode' => 'home#service_mode'
 
-  get 'partner' => 'home#partner'
+  get 'about_us' => 'home#about_us'
 
   get 'team' => 'home#team'
 
