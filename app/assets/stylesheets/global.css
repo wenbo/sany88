@@ -109,3 +109,6 @@
 .sub_menu li{
 		margin: 3px 0;
 }
+.sub_menu ul li a{
+		font-size: 13px;
+}
