@@ -1,0 +1,40 @@
+<%= content_for :head do %>
+  <link rel="stylesheet" type="text/css" href="/assets/reset.css">
+  <link rel="stylesheet" type="text/css" href="/assets/base.css">
+  <link rel="stylesheet" type="text/css" href="/assets/global.css">
+  <link rel="stylesheet" type="text/css" href="/assets/list.css">
+  <script type="text/javascript" src="/assets/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="/assets/main.js"></script>
+<% end %>
+<div id="content">
+  <div class="bx">
+    <div class="content_nav">
+      <ul class="fl">
+        <li class="no1"><a href="/projects">全部案例</a></li>
+        <% ProjectCategory.all.each do |pc| %>
+          <li><%= link_to pc.name, project_category_path(pc) %></li>
+        <% end %>
+      </ul> 
+      <span class="fk fr"></span>
+    </div>
+    <div class="inner_img">
+      <ul>
+        <% @projects.in_groups_of(4).each_with_index do |projects, i| %>
+          <% projects.compact.each do |project| %>
+            <% if i == 0 %>
+              <li class="npt">
+            <% else %>
+              <li>
+            <% end %>
+            <div class="img ">
+              <%= link_to (image_tag project.project_thumbnail.image.url, width: '220', height: '149'), project_path(project) %>
+            </div>
+            <span><%= project.name %></span>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="cl h42"></div>
