@@ -16,4 +16,9 @@ class HomeController < ApplicationController
 
   def team
   end
+
+  def search
+    keyword = params["keyword"]
+    @projects = Project.where(["name like ? or brand_name like ?" , "%#{keyword}%", "%#{keyword}%",])
+  end
 end

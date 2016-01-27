@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'contact' => 'home#contact'
+  get 'search' => 'home#search'
 
   get 'cooperate' => 'home#cooperate'
 
