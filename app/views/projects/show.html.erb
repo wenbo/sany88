@@ -2,9 +2,7 @@
 <%= content_for :head do %>
 <%= stylesheet_link_tag    'reset', 'base', 'global', 'list', 'skin', media: 'all',
      'data-turbolinks-track' => true %>
-<script type="text/javascript" src="/assets/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="/assets/jquery.jcarousel.min.js"></script>
-<script type="text/javascript" src="/assets/main.js"></script>
+<%= javascript_include_tag 'jquery-1.4.2.min', 'jquery.jcarousel.min', 'main', 'data-turbolinks-track' => true %>
 <% end %>
 <div id="content">
   <div class="bx">
