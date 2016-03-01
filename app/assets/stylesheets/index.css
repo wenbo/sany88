@@ -58,37 +58,37 @@
 			text-indent: -9999px;
 			width: 104px;
 			height: 47px;
-			background: url(/assets/logo_1.png)no-repeat;
+			background: url(<%= assets_path 'logo_1.png' %>) no-repeat;
 		}
 			.content_top ul li h4.h4_2{
 			text-indent: -9999px;
 			width: 104px;
 			height: 47px;
-			background: url(/assets/sj.png)no-repeat;
+			background: url(<%= assets_path 'sj.png' %>) no-repeat;
 		}
 	.content_top ul li h4.h4_3{
 			text-indent: -9999px;
 			width: 104px;
 			height: 47px;
-			background: url(/assets/pp.png)no-repeat;
+			background: url(<%= assets_path 'pp.png' %>)no-repeat;
 		}
 		.content_top ul li h4.h4_4{
 			text-indent: -9999px;
 			width: 104px;
 			height: 47px;
-			background: url(/assets/sy.png)no-repeat;
+			background: url(<%= assets_path 'sy.png' %>)no-repeat;
 		}
 		.content_top ul li h4.h4_5{
 			text-indent: -9999px;
 			width: 104px;
 			height: 47px;
-			background: url(/assets/fd.png)no-repeat;
+			background: url(<%= assets_path 'fd.png' %>)no-repeat;
 		}
 		.content_top ul li h4.h4_6{
 			text-indent: -9999px;
 			width: 104px;
 			height: 47px;
-			background: url(/assets/hd.png)no-repeat;
+			background: url(<%= assets_path 'hd.png' %>)no-repeat;
 		}
 		.inner{
 				margin-left: -60px;
