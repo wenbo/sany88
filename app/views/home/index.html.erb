@@ -1,12 +1,8 @@
 # coding: utf-8
 <%= content_for :head do %>
-<link rel="stylesheet" type="text/css" href="/assets/reset.css">
-<link rel="stylesheet" type="text/css" href="/assets/base.css">
-<link rel="stylesheet" type="text/css" href="/assets/global.css">
-<link rel="stylesheet" type="text/css" href="/assets/index.css">
-<script type="text/javascript" src="/assets/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="/assets/chuantong.js"></script>
-<script type="text/javascript" src="/assets/main.js"></script>
+   <%= stylesheet_link_tag    'reset', 'base', 'global', 'index', media: 'all',
+     'data-turbolinks-track' => true %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <% end %>
 <div id="banner">
   <div id="chuantong">
