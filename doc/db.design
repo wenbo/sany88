@@ -26,3 +26,4 @@ RAILS_ENV=production rake assets:precompile
 rails g controller project_categories index show
 
 rails g model news name:string content:text is_public:boolean public_time:datetime
+rails g model contact name:string phone:string email:string subject:string content:text

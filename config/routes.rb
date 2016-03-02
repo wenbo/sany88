@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'contact' => 'home#contact'
+  get 'contact' => 'home#new'
   get 'search' => 'home#search'
+  post '/contact'=>'home#contact'
 
   get 'cooperate' => 'home#cooperate'
 
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   get 'team' => 'home#team'
 
   get 'cases' => 'projects#index'
-  
+
   resources :project_categories
   resources :projects
   resources :news

@@ -28,9 +28,22 @@
         <textarea class="ly" clols="275" rows="97" name="content"></textarea>
         <br>
         <input class="button" type="submit" value="提交" >
-        <p><font color="red" size="4">thanks for your time</font></p>
    	</div>
   </div>
 </div>
 </form>
+<p>
+  <% if @contact.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(@contact.errors.count, "error") %>
+        prohibited the information from being saved:</h2>
+        <ul>
+          <% @contact.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  </p>
 <div class="cl h315"></div>
