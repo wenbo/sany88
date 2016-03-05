@@ -1,3 +1,5 @@
+cd /home/bob/workspace/sany88.com/sany88 && rails server
+
 :%s/src="/src="\/M2028_2328D\//g
 :%s/href="/href="\/M2028_2328D\//g
 
@@ -13,6 +15,4 @@ sed -i '' -e  "s/137 6189 2871/156 0187 8272/g" `grep '137 6189 2871' -rl ./app/
 
  sed -i '' -e  "s/137-6189-2871/156-0187-8272/g" `grep '137-6189-2871' -rl ./app/views`
 
-
-
-
+bob@dell:sany88$ vi /home/bob/.rvm/gems/ruby-2.0.0-p195/gems/elasticsearch-model-0.1.8/lib/elasticsearch/model/importing.rb +118

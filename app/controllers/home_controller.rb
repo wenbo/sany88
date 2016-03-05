@@ -29,7 +29,9 @@ class HomeController < ApplicationController
 
   def search
     keyword = params["keyword"]
-    @projects = Project.where(["name like ? or brand_name like ?" , "%#{keyword}%", "%#{keyword}%",])
+    #@projects = Project.where(["name like ? or brand_name like ?" , "%#{keyword}%", "%#{keyword}%",])
+    @projects = Elasticsearch::Model.search(keyword, [Project, News]).records
+    #render text: @projects.to_json
   end
 
   private
