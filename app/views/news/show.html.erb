@@ -1,0 +1,39 @@
+# coding: utf-8
+<%= content_for :head do %>
+<%= stylesheet_link_tag    'reset', 'base', 'global', 'list', media: 'all',
+     'data-turbolinks-track' => true %>
+<script type="text/javascript" src="/assets/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/assets/main.js"></script>
+<% end %>
+<style type="text/css">
+.bx{
+}
+.bx h2{
+  margin-top:30px;
+
+  margin-bottom:20px;
+
+  text-align:center;
+  font-size:16px;
+  }
+  .bx p{
+    font-size:14px;
+    }
+    #time{
+      float: right;
+      margin-right: 200px;
+      }
+</style>
+<div id="content">
+  <div class="bx">
+  <h2><%= @news.name %></h2>
+  <p id="time">
+  <%= @news.public_time.strftime("%Y-%m-%d") %>
+  </p>
+
+  <p id="content">
+  <%= @news.content %>
+  </p>
+  </div>
+</div>
+<div class="cl h42"></div>

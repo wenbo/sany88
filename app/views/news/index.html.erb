@@ -1,0 +1,32 @@
+# coding: utf-8
+<%= content_for :head do %>
+<%= stylesheet_link_tag    'reset', 'base', 'global', 'list', media: 'all',
+     'data-turbolinks-track' => true %>
+<script type="text/javascript" src="/assets/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/assets/main.js"></script>
+<% end %>
+<style type="text/css">
+.bx h2{
+  margin-top:30px;
+  margin-bottom:20px;
+  text-align:center;
+  font-size:16px;
+  }
+
+.bx ul li{
+  line-height:30px;
+  }
+</style>
+<div id="content">
+  <div class="bx">
+  <h2>行业动态</h2>
+  <ul>
+  <% News.all.each do |news| %>
+  <li>
+  <%= link_to news.public_time.strftime("%Y-%m-%d") + ": " + news.name.truncate(30), news_path(news) %>
+  </li>
+  <% end %>
+  </ul>
+  </div>
+</div>
+<div class="cl h42"></div>
