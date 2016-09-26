@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'contact' => 'home#new'
   get 'search' => 'home#search'
   get 'wx' => 'home#wx'
+  post 'wx' => 'home#wx'
   post '/contact'=>'home#contact'
 
   get 'cooperate' => 'home#cooperate'

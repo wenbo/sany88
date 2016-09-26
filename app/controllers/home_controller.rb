@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
 
   def wx
-  render plain: true
+    render plain: params[:echostr]
   end
 
   def new
