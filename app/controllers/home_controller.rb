@@ -2,6 +2,10 @@ class HomeController < ApplicationController
   def index
   end
 
+  def wx
+  render plain: true
+  end
+
   def new
     @contact= Contact.new
   end
